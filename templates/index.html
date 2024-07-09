@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7; /* Light gray background */
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: #abc123; /* Blue background */
+            color: white;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center; /* Center items vertically */
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        nav ul li a:hover {
+            background-color: #2980b9; /* Darker blue background on hover */
+        }
+
+       .content {
+            padding: 20px;
+        }
+
+        section {
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+            background-color: #fff; /* White background for sections */
+            margin-bottom: 20px; /* Add space between sections */
+        }
+
+        section h1 {
+            color: #abc123; /* Blue headings */
+        }
+
+        /* Responsive adjustments */
+        @media only screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column; /* Stack items vertically */
+                background-color: #2980b9; /* Darker blue background for mobile */
+                position: static;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            section {
+                background-color: #f9f9f9; /* Light gray background for sections */
+                margin-bottom: 20px; /* Add space between sections */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section id="home">
+            <h1>Home</h1>
+            <p>Welcome to our website!</p>
+        </section>
+        <section id="about">
+            <h1>About</h1>
+            <p>About us section content.</p>
+        </section>
+        <section id="services">
+            <h1>Services</h1>
+            <p>Our services section content.</p>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+            <p>Contact us section content.</p>
+        </section>
+    </div>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = '#2980b9';
+            } else {
+                navbar.style.backgroundColor = '#3498db';
+            }
+        });
+    </script>
+</body>
+</html>
